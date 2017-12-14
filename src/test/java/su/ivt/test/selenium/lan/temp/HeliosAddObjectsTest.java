@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.test;
+package su.ivt.test.selenium.lan.temp;
 
 import org.junit.*;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HeliosAddObjectsTest {
     private static WebDriver driver;
-
+    @Ignore
     @BeforeClass
     public static void setup() throws InterruptedException {
         By usernameLocator = By.id("user");
@@ -52,7 +52,7 @@ public class HeliosAddObjectsTest {
         treeButton.click();
         Thread.sleep(1000);
     }
-
+    @Ignore
     @Before
     public void selectTreeNode() throws InterruptedException {
 
@@ -68,7 +68,7 @@ public class HeliosAddObjectsTest {
         Assert.assertEquals("Testing", nodeNameText);
         Thread.sleep(1000);
     }
-
+    @Ignore
     @Test
     public void addGroup() throws InterruptedException {
 
@@ -98,7 +98,7 @@ public class HeliosAddObjectsTest {
         String nameVerificationText = nameVerification.getText();
         Assert.assertEquals("Новая группа", nameVerificationText);
     }
-
+    @Ignore
     @Test
     public void addGeoObject() throws InterruptedException {
         By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -138,7 +138,7 @@ public class HeliosAddObjectsTest {
         String nameVerificationText = nameVerification.getText();
         Assert.assertEquals("Новый район", nameVerificationText);
     }
-
+    @Ignore
     @Test
     public void addHeliosObject() throws InterruptedException {
         By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -221,7 +221,7 @@ public class HeliosAddObjectsTest {
         String nameVerificationText = nameVerification.getText();
         Assert.assertEquals("Новый объект Гелиос 2", nameVerificationText);
     }
-
+    @Ignore
     @AfterClass
     public static void tearDown() throws InterruptedException {
         WebElement logoutButton = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[3]/div/div[5]/a"));

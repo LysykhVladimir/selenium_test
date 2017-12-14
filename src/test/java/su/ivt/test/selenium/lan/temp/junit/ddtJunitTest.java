@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.test.junit;
+package su.ivt.test.selenium.lan.temp.junit;
 
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -36,7 +36,7 @@ public class ddtJunitTest {
         this.name = name;
         this.description = description;
     }
-
+    @Ignore
     @BeforeClass
     public static void setup() throws InterruptedException {
         By usernameLocator = By.id("user");
@@ -76,7 +76,7 @@ public class ddtJunitTest {
         treeButton.click();
         Thread.sleep(999);
     }
-
+    @Ignore
     @Before
     public void selectTreeNode() throws InterruptedException {
 
@@ -92,7 +92,7 @@ public class ddtJunitTest {
         Assert.assertEquals("Testing", nodeNameText);
         Thread.sleep(999);
     }
-
+    @Ignore
     @Test
     public void addGroup() throws InterruptedException {
         By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");

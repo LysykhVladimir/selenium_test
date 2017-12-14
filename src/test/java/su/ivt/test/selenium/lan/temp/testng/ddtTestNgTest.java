@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.test.testng;
+package su.ivt.test.selenium.lan.temp.testng;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,7 +49,7 @@ public class ddtTestNgTest {
         };
     }
 
-    @BeforeClass
+    @BeforeClass(enabled = false)
     public static void setup() throws InterruptedException {
         By usernameLocator = By.id("user");
         By passwordLocator = By.id("pass");
@@ -86,7 +86,7 @@ public class ddtTestNgTest {
     }
 
 
-    @Test(dataProvider = "groupData", groups = {"testAddObjectGroup"})
+    @Test(enabled = false,dataProvider = "groupData", groups = {"testAddObjectGroup"})
     public void addGroup(String name, String description) throws InterruptedException {
         try{
             By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -121,7 +121,7 @@ public class ddtTestNgTest {
         }
     }
 
-    @Test(dataProvider = "geoData", groups = {"testAddObjectGroup"})
+    @Test(enabled = false,dataProvider = "geoData", groups = {"testAddObjectGroup"})
     public void addGeoObject(String name, String latitude, String longitude) throws InterruptedException {
         try {
             By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -173,7 +173,7 @@ public class ddtTestNgTest {
 
     }
 
-    @Test (dataProvider = "heliosData",groups = {"testAddObjectGroup"})
+    @Test (enabled = false,dataProvider = "heliosData",groups = {"testAddObjectGroup"})
     public void addHeliosObject(String name, String nominal, String ktt, String fn, String sn,
                                 String phone, String shipmentDate, String guarantee, String batteryReplacementDate,
                                 String guaranteePeriod) throws InterruptedException {
@@ -266,19 +266,19 @@ public class ddtTestNgTest {
         }
     }
 
-    @Test(dataProvider = "groupData",dependsOnGroups = {"testAddObjectGroup"})
+    @Test(enabled = false,dataProvider = "groupData",dependsOnGroups = {"testAddObjectGroup"})
     public void deleteGroup(String name, String description) throws InterruptedException {
         String type = "GroupObject";
         delete(name,type);
     }
 
-    @Test(dataProvider = "geoData",dependsOnGroups = {"testAddObjectGroup"})
+    @Test(enabled = false,dataProvider = "geoData",dependsOnGroups = {"testAddObjectGroup"})
     public void deleteGeoObject(String name, String latitude, String longitude) throws InterruptedException {
         String type = "GeoObject";
         delete(name,type);
     }
 
-    @Test(dataProvider = "heliosData",dependsOnGroups = {"testAddObjectGroup"})
+    @Test(enabled = false,dataProvider = "heliosData",dependsOnGroups = {"testAddObjectGroup"})
     public void deleteHeliosObject(String name, String nominal, String ktt, String fn, String sn,
                                    String phone, String shipmentDate, String guarantee, String batteryReplacementDate,
                                    String guaranteePeriod) throws InterruptedException {
@@ -414,7 +414,7 @@ public class ddtTestNgTest {
         });
     }
 
-    @AfterClass
+    @AfterClass(enabled = false)
     public void tearDown() {
         driver.quit();
         String verificationErrorString = verificationErrors.toString();

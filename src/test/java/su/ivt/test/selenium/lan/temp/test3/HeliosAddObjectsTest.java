@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.test3;
+package su.ivt.test.selenium.lan.temp.test3;
 
 import org.junit.*;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HeliosAddObjectsTest {
     private static WebDriver driver;
-
+    @Ignore
     @BeforeClass
     public static void setup() throws InterruptedException {
         By usernameLocator = By.id("user");
@@ -51,7 +51,7 @@ public class HeliosAddObjectsTest {
         treeButton.click();
         Thread.sleep(1000);
     }
-
+    @Ignore
     @Before
     public void selectTreeNode() throws InterruptedException {
 
@@ -66,7 +66,7 @@ public class HeliosAddObjectsTest {
         String nodeNameText = nodeName.getText();
         Assert.assertEquals("Testing", nodeNameText);
     }
-
+    @Ignore
     @Test
     public void addGroup() throws InterruptedException {
         By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -97,7 +97,7 @@ public class HeliosAddObjectsTest {
         Assert.assertEquals("Новая группа", nameVerificationText);
 
     }
-
+    @Ignore
     @Test
     public void addGeoObject() throws InterruptedException {
         By addButtonLocator = By.cssSelector("#ext-gen6 > div:nth-child(15) > div.GD5V5V5DM3D-su-ivt-helios-web-ui-layout-LayoutView_LayoutUiBinderImpl_GenCss_style-mainContainer > div.GD5V5V5DF3D-su-ivt-helios-web-ui-layout-LayoutView_LayoutUiBinderImpl_GenCss_style-center.GD5V5V5DP2C-su-ivt-helios-web-ui-layout-LayoutResources-LayoutStyle-centerMinimized > div > div.GD5V5V5DP3D-su-ivt-helios-web-ui-layout-ThreeColumnContentView_ThreeColumnContentViewUiBinderImpl_GenCss_style-center > div > div.GD5V5V5DI3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-content > div > div > div:nth-child(1) > div > div > div.GD5V5V5DP1D-su-ivt-helios-web-pages-admin-infoPanel-FormPanelView_FormPanelViewUiBinderImpl_GenCss_style-headerContainer > div:nth-child(4) > div > div");

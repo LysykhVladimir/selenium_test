@@ -1,12 +1,11 @@
-package su.ivt.test.selenium.lan.test.PageObjects;
+package su.ivt.test.selenium.lan.pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import su.ivt.test.selenium.lan.config.DriverFactory;
 
 public class LoginPage {
-
     @FindBy(id = "user")
     private WebElement usernameLocator;
     @FindBy(id = "pass")
@@ -16,9 +15,10 @@ public class LoginPage {
     @FindBy(xpath = "/html/body/div[4]/div[1]/div/div[3]/div/div[5]/span")
     private WebElement profileLocator;
 
-    public LoginPage (WebDriver driver) {
-        PageFactory.initElements(driver,this);
-    }
+   public LoginPage() throws Exception {
+       //driver = DriverFactory.getDriver();
+       PageFactory.initElements(DriverFactory.getDriver(), this);
+   }
 
     public LoginPage enterUsername (String username) {
         usernameLocator.sendKeys(username);
@@ -37,4 +37,5 @@ public class LoginPage {
     public WebElement getProfileLocator() {
         return profileLocator;
     }
+
 }

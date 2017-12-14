@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.test.testng;
+package su.ivt.test.selenium.lan.temp.testng;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

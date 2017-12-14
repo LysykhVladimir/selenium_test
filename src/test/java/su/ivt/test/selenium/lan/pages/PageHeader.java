@@ -1,8 +1,8 @@
-package su.ivt.test.selenium.lan.test.PageObjects;
+package su.ivt.test.selenium.lan.pages;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import su.ivt.test.selenium.lan.config.DriverFactory;
 
 public class PageHeader {
 
@@ -38,8 +38,8 @@ public class PageHeader {
     private WebElement nameOfMenuSection;
 
 
-    public PageHeader (WebDriver driver) {
-        PageFactory.initElements(driver,this);
+    public PageHeader () throws Exception {
+        PageFactory.initElements(DriverFactory.getDriver(), this);
     }
 
     public WebElement getNameOfMenuSection() {
