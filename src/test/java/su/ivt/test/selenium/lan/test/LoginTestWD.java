@@ -5,12 +5,12 @@ import org.testng.annotations.Test;
 import su.ivt.test.selenium.lan.config.DriverFactory;
 import su.ivt.test.selenium.lan.pages.LoginPage;
 
-public class LoginTest extends DriverFactory{
+public class LoginTestWD extends DriverFactory{
 
-    public static final String URL = "http://test.helios2.ivt.lan/login.html";
-    public static final String LOGIN = "lysykh87";
-    public static final String PASSWORD = "lysykh87";
-    public static final String USER_NAME = "Vladimir Lysykh";
+    private static final String URL = "http://test.helios2.ivt.lan/login.html";
+    private static final String LOGIN = "lysykh87";
+    private static final String PASSWORD = "lysykh87";
+    private static final String USER_NAME = "Vladimir Lysykh";
 
     @Test(groups = "login test")
     public void logInToWebsite() throws Exception {

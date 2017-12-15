@@ -16,7 +16,6 @@ public class LoginPage {
     private WebElement profileLocator;
 
    public LoginPage() throws Exception {
-       //driver = DriverFactory.getDriver();
        PageFactory.initElements(DriverFactory.getDriver(), this);
    }
 

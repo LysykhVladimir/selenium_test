@@ -45,7 +45,6 @@ public class PageHeader {
     public WebElement getNameOfMenuSection() {
         return nameOfMenuSection;
     }
-
     public void goToMonitoringPage(){
         monitoringButton.click();
     }

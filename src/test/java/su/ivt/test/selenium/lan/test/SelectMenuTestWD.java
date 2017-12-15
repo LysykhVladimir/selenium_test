@@ -10,11 +10,11 @@ import su.ivt.test.selenium.lan.config.DriverFactory;
 import su.ivt.test.selenium.lan.pages.LoginPage;
 import su.ivt.test.selenium.lan.pages.PageHeader;
 
-public class SelectMenuTest extends DriverFactory{
+public class SelectMenuTestWD extends DriverFactory{
 
-    public static final String URL = "http://test.helios2.ivt.lan/login.html";
-    public static final String LOGIN = "lysykh87";
-    public static final String PASSWORD = "lysykh87";
+    private static final String URL = "http://test.helios2.ivt.lan/login.html";
+    private static final String LOGIN = "lysykh87";
+    private static final String PASSWORD = "lysykh87";
 
     @BeforeClass
     public void setUp() throws Exception {
