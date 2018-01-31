@@ -12,15 +12,16 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <project.build.sourceEncoding>UTF-8
-        </project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8
-        </project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <!-- Dependency versions -->
         <selenium.version>2.53.0</selenium.version>
+
         <!-- Configurable variables -->
         <threads>1</threads>
         <browser>Chrome</browser>
+
     </properties>
 
     <dependencies>
@@ -41,6 +42,13 @@
             <artifactId>testng</artifactId>
             <version>6.11</version>
         </dependency>
+
+        <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.8</version>
+        </dependency>
+
     </dependencies>
 
     <build>

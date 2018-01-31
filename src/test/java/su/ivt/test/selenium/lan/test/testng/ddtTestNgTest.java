@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.temp.testng;
+package su.ivt.test.selenium.lan.test.testng;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;

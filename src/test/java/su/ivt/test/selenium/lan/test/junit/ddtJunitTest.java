@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.temp.junit;
+package su.ivt.test.selenium.lan.test.junit;
 
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 @RunWith(value = Parameterized.class)
 public class ddtJunitTest {
     private static WebDriver driver;
-
 
     private String name;
     private String description;
@@ -36,6 +35,7 @@ public class ddtJunitTest {
         this.name = name;
         this.description = description;
     }
+
     @Ignore
     @BeforeClass
     public static void setup() throws InterruptedException {

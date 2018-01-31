@@ -1,4 +1,4 @@
-package su.ivt.test.selenium.lan.temp;
+package su.ivt.test.selenium.lan.test.junit;
 
 import org.junit.*;
 import org.openqa.selenium.By;
