@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HeliosSelectMenuTest {
     private static WebDriver driver;
-    @Ignore
+
     @BeforeClass
     public static void setup() {
         By usernameLocator = By.id("user");
@@ -36,11 +36,11 @@ public class HeliosSelectMenuTest {
 
         Assert.assertEquals("Владимир Лысых", gUser);
     }
-    @Ignore
+
     @Test
     public void selectMonitoring() throws InterruptedException {
         By selectLocator = By.name("watch");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement monitoringButton = driver.findElement(selectLocator);
         monitoringButton.click();
@@ -54,7 +54,7 @@ public class HeliosSelectMenuTest {
     @Test
     public void selectSchedule() throws InterruptedException {
         By selectLocator = By.name("schedule");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
        WebElement scheduleButton = driver.findElement(selectLocator);
        scheduleButton.click();
@@ -64,11 +64,11 @@ public class HeliosSelectMenuTest {
        String panelNameText = panelName.getText();
        Assert.assertEquals("РАСПИСАНИЕ", panelNameText);
     }
-    @Ignore
+
    @Test
     public void selectObjects() throws InterruptedException {
        By selectLocator = By.name("admin");
-       By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+       By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
        WebElement reportButton = driver.findElement(selectLocator);
        reportButton.click();
@@ -78,11 +78,11 @@ public class HeliosSelectMenuTest {
        String panelNameText = panelName.getText();
        Assert.assertEquals("ОБЪЕКТЫ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectReports() throws InterruptedException {
         By selectLocator = By.name("reports");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement reportButton = driver.findElement(selectLocator);
         reportButton.click();
@@ -92,11 +92,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("ОТЧЕТЫ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectTasks() throws InterruptedException {
         By selectLocator = By.name("workJournal");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement taskButton = driver.findElement(selectLocator);
         taskButton.click();
@@ -106,11 +106,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("ЗАДАЧИ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectEvents() throws InterruptedException {
         By selectLocator = By.name("monitoring");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement eventButton = driver.findElement(selectLocator);
         eventButton.click();
@@ -120,11 +120,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("СОБЫТИЯ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectMap() throws InterruptedException {
         By selectLocator = By.name("map");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement mapButton = driver.findElement(selectLocator);
         mapButton.click();
@@ -134,11 +134,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("КАРТА", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectInventory() throws InterruptedException {
         By selectLocator = By.name("inventory");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement inventoryButton = driver.findElement(selectLocator);
         inventoryButton.click();
@@ -148,11 +148,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("ИНВЕНТАРИЗАЦИЯ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectUsers() throws InterruptedException {
         By selectLocator = By.name("users");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement usersButton = driver.findElement(selectLocator);
         usersButton.click();
@@ -162,11 +162,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("ПОЛЬЗОВАТЕЛИ И РОЛИ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectUserLogs() throws InterruptedException {
         By selectLocator = By.name("userLogs");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement userLogsButton = driver.findElement(selectLocator);
         userLogsButton.click();
@@ -176,11 +176,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("ДЕЙСТВИЯ ПОЛЬЗОВАТЕЛЕЙ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectService() throws InterruptedException {
         By selectLocator = By.name("service");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement serviceButton = driver.findElement(selectLocator);
         serviceButton.click();
@@ -190,11 +190,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("ОБСЛУЖИВАНИЕ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectSettings() throws InterruptedException {
         By selectLocator = By.name("settings");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement settingsButton = driver.findElement(selectLocator);
         settingsButton.click();
@@ -204,11 +204,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("НАСТРОЙКИ СИСТЕМЫ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectLightBoxLogs() throws InterruptedException {
         By selectLocator = By.name("lightBoxLogs");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement lightBoxLogsButton = driver.findElement(selectLocator);
         lightBoxLogsButton.click();
@@ -218,11 +218,11 @@ public class HeliosSelectMenuTest {
         String panelNameText = panelName.getText();
         Assert.assertEquals("ЛОГИ УСТРОЙСТВ", panelNameText);
     }
-    @Ignore
+
     @Test
     public void selectLightSensors() throws InterruptedException {
         By selectLocator = By.name("lightSensors");
-        By panelLocator = By.className("GD5V5V5DM3C-su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label");
+        By panelLocator = By.xpath("//div[contains(@class, 'su-ivt-helios-web-ui-panel-contentPanel-ContentPanelResources-ContentPanelCss-label')]");
 
         WebElement lightSensorsButton = driver.findElement(selectLocator);
         lightSensorsButton.click();
@@ -233,7 +233,7 @@ public class HeliosSelectMenuTest {
         Assert.assertEquals("ДАТЧИКИ ОСВЕЩЕННОСТИ", panelNameText);
     }
 
-    @Ignore
+
     @AfterClass
     public static void tearDown() {
         WebElement logoutButton = driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/div[3]/div/div[5]/a"));
