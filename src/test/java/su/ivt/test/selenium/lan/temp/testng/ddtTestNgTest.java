@@ -3,7 +3,6 @@ package su.ivt.test.selenium.lan.temp.testng;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -27,6 +26,7 @@ public class ddtTestNgTest {
                 new Object[] {"Группа 5", "Описание группы 5"},
         };
     }
+
     @DataProvider
     public  Object[][] geoData() {
         return new Object[][] {
@@ -49,7 +49,7 @@ public class ddtTestNgTest {
         };
     }
 
-    @BeforeClass(enabled = false)
+    @BeforeClass
     public static void setup() throws InterruptedException {
         By usernameLocator = By.id("user");
         By passwordLocator = By.id("pass");
@@ -86,7 +86,7 @@ public class ddtTestNgTest {
     }
 
 
-    @Test(enabled = false,dataProvider = "groupData", groups = {"testAddObjectGroup"})
+    @Test(dataProvider = "groupData", groups = {"testAddObjectGroup"})
     public void addGroup(String name, String description) throws InterruptedException {
         try{
             By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -104,16 +104,13 @@ public class ddtTestNgTest {
             radioButton.click();
 
             WebElement nameGroupField = driver.findElement(nameGroupLocator);
-            typeField(nameGroupField,name);
-            //nameGroupField.sendKeys(name);
+            nameGroupField.sendKeys(name);
             WebElement descriptionGroupField = driver.findElement(descriptionGroupLocator);
-            typeField(descriptionGroupField,description);
-            //descriptionGroupField.sendKeys(description);
+            descriptionGroupField.sendKeys(description);
 
             WebElement saveButton = driver.findElement(saveButtonLocator);
             saveButton.click();
-            waitFullPageLoading();
-
+            Thread.sleep(2000);
             checkName(name, nameVerificationLocator);
 
         } catch (Error e) {
@@ -121,7 +118,7 @@ public class ddtTestNgTest {
         }
     }
 
-    @Test(enabled = false,dataProvider = "geoData", groups = {"testAddObjectGroup"})
+    @Test(dataProvider = "geoData", groups = {"testAddObjectGroup"})
     public void addGeoObject(String name, String latitude, String longitude) throws InterruptedException {
         try {
             By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -143,27 +140,24 @@ public class ddtTestNgTest {
 
             retryingFindClick(nameGeoLocator);
             WebElement nameGeoField = driver.findElement(nameGeoLocator);
-            typeField(nameGeoField,name);
-            //nameGeoField.sendKeys(name);
+            nameGeoField.sendKeys(name);
 
             WebElement typeGeoField = driver.findElement(typeGeoLocator);
             Actions builder = new Actions(driver);
             builder.click(typeGeoField).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
 
             WebElement latitudeGeoField = driver.findElement(latitudeGeoLocator);
-           // latitudeGeoField.sendKeys(latitude);
-            typeField(latitudeGeoField,latitude);
+            latitudeGeoField.sendKeys(latitude);
 
             WebElement longitudeGeoField = driver.findElement(longitudeGeoLocator);
-            //longitudeGeoField.sendKeys(longitude);
-            typeField(longitudeGeoField,longitude);
+            longitudeGeoField.sendKeys(longitude);
 
             WebElement timeZoneField = driver.findElement(timeZoneGeoLocator);
             builder.click(timeZoneField).sendKeys(Keys.ENTER).build().perform();
 
             WebElement saveButton = driver.findElement(saveButtonLocator);
             saveButton.click();
-            waitFullPageLoading();
+            Thread.sleep(3000);
 
             checkName(name, nameVerificationLocator);
 
@@ -172,12 +166,10 @@ public class ddtTestNgTest {
         }
 
     }
-
-    @Test (enabled = false,dataProvider = "heliosData",groups = {"testAddObjectGroup"})
+    @Test (dataProvider = "heliosData",groups = {"testAddObjectGroup"})
     public void addHeliosObject(String name, String nominal, String ktt, String fn, String sn,
                                 String phone, String shipmentDate, String guarantee, String batteryReplacementDate,
                                 String guaranteePeriod) throws InterruptedException {
-
         try {
             selectTreeNode();
             By addButtonLocator = By.xpath("/html/body/div[4]/div[2]/div[1]/div/div[3]/div/div[2]/div/div/div[1]/div/div/div[1]/div[4]/div/div");
@@ -201,15 +193,16 @@ public class ddtTestNgTest {
 
             WebElement addButton = driver.findElement(addButtonLocator);
             addButton.click();
+            Thread.sleep(1000);
 
             retryingFindClick(radioButtonLocator);
             WebElement radioButton = driver.findElement(radioButtonLocator);
             radioButton.click();
 
-            Thread.sleep(2000);
+            Thread.sleep(4000);
             retryingFindClick(nameHeliosLocator);
             WebElement nameHeliosField = driver.findElement(nameHeliosLocator);
-            typeField(nameHeliosField,name);
+            nameHeliosField.sendKeys(name);
 
             WebElement versionCCField = driver.findElement(versionCCLocator);
             Actions builder = new Actions(driver);
@@ -220,19 +213,19 @@ public class ddtTestNgTest {
             builder.click(typeCCField).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
 
             WebElement nominalField = driver.findElement(nominalLocator);
-            typeField(nominalField,nominal);
+            nominalField.sendKeys(nominal);
 
             WebElement kttField = driver.findElement(kttLocator);
-            typeField(kttField,ktt);
+            kttField.sendKeys(ktt);
 
             WebElement fnField = driver.findElement(fnLocator);
-            typeField(fnField,fn);
+            fnField.sendKeys(fn);
 
             WebElement snField = driver.findElement(snLocator);
-            typeField(snField,sn);
+            snField.sendKeys(sn);
 
             WebElement phoneField = driver.findElement(phoneLocator);
-            typeField(phoneField,phone);
+            phoneField.sendKeys(phone);
 
             WebElement gsmField = driver.findElement(gsmLocator);
             builder = new Actions(driver);
@@ -257,28 +250,29 @@ public class ddtTestNgTest {
             guaranteePeriodCUField.sendKeys(guaranteePeriod);
 
             WebElement saveButton = driver.findElement(saveButtonLocator);
+
             saveButton.click();
-            waitFullPageLoading();
             checkName(name, nameVerificationLocator);
+            Thread.sleep(10000);
 
         } catch (Error e) {
             verificationErrors.append(e.toString());
         }
     }
 
-    @Test(enabled = false,dataProvider = "groupData",dependsOnGroups = {"testAddObjectGroup"})
+    @Test(dataProvider = "groupData",dependsOnGroups = {"testAddObjectGroup"})
     public void deleteGroup(String name, String description) throws InterruptedException {
         String type = "GroupObject";
         delete(name,type);
     }
 
-    @Test(enabled = false,dataProvider = "geoData",dependsOnGroups = {"testAddObjectGroup"})
+    @Test(dataProvider = "geoData",dependsOnGroups = {"testAddObjectGroup"})
     public void deleteGeoObject(String name, String latitude, String longitude) throws InterruptedException {
         String type = "GeoObject";
         delete(name,type);
     }
 
-    @Test(enabled = false,dataProvider = "heliosData",dependsOnGroups = {"testAddObjectGroup"})
+    @Test(dataProvider = "heliosData",dependsOnGroups = {"testAddObjectGroup"})
     public void deleteHeliosObject(String name, String nominal, String ktt, String fn, String sn,
                                    String phone, String shipmentDate, String guarantee, String batteryReplacementDate,
                                    String guaranteePeriod) throws InterruptedException {
@@ -359,7 +353,7 @@ public class ddtTestNgTest {
 
             WebElement eraseButton = driver.findElement(eraseButtonLocator);
             eraseButton.click();
-            waitFullPageLoading();
+            Thread.sleep(3000);
         }catch (Error e) {
             verificationErrors.append(e.toString());
         }
@@ -379,42 +373,7 @@ public class ddtTestNgTest {
         }
         return result;
     }
-
-
-    private boolean typeField(WebElement el, String text){
-        String fieldTest;
-        boolean result = false;
-        int attempts = 0;
-
-        while(attempts < 2) {
-            try {
-                el.clear();
-                el.click();
-                el.sendKeys(text);
-                fieldTest = el.getAttribute("value");
-                if (fieldTest.equals(text)){
-                    result = true;
-                    break;
-                }
-            } catch(StaleElementReferenceException e) {
-            }
-            attempts++;
-        }
-        return result;
-    }
-
-    public void waitFullPageLoading() {
-        new WebDriverWait(driver,  200).until(new ExpectedCondition<Boolean>() {
-            @Override
-            public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver)
-                        .executeScript("return document.readyState")
-                        .equals("complete");
-            }
-        });
-    }
-
-    @AfterClass(enabled = false)
+    @AfterClass()
     public void tearDown() {
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
